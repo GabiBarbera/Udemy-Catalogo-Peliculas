@@ -48,7 +48,7 @@ public class AccesoDatosImpl implements AccesoDatos {
             PrintWriter salida = new PrintWriter(new FileWriter(archivo, anexar));
             salida.println(pelicula.toString());
             salida.close();
-            System.out.println("Se ha escrito informacion al archivo" + pelicula);
+            System.out.println("Se ha escrito informacion al archivo: " + pelicula);
         } catch (IOException e) {
             e.printStackTrace();
             throw new EscrituraDatosEx("Excepcion al escribir peliculas" + e.getMessage());
@@ -66,7 +66,7 @@ public class AccesoDatosImpl implements AccesoDatos {
             int indice = 1;
             while (linea != null) {
                 if (buscar != null && buscar.equalsIgnoreCase(linea)) {
-                    resultado = "Pelicula" + linea + "encontrada en el indice" + indice;
+                    resultado = "Pelicula" + linea + "encontrada en el indice: " + indice;
                     break;
                 }
                 linea = entrada.readLine();
@@ -89,7 +89,7 @@ public class AccesoDatosImpl implements AccesoDatos {
         try {
             PrintWriter salida = new PrintWriter(new FileWriter(archivo));
             salida.close();
-            System.out.println("Se ha creado el archivo");
+            System.out.println("Se ha creado el archivo ");
         } catch (IOException e) {
             e.printStackTrace();
             throw new AccesoDatosEx("Excepcion al crear peliculas" + e.getMessage());
@@ -101,6 +101,6 @@ public class AccesoDatosImpl implements AccesoDatos {
         File archivo = new File(nombreRecurso);
         if (archivo.exists())
             archivo.delete();
-        System.out.println("Se ha borrado el archivo");
+        System.out.println("Se ha borrado el archivo ");
     }
 }
